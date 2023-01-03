@@ -26,3 +26,5 @@ Q. Create an express application named as `blog` using generator.
 
   - button to go to home
   - button to go to article details page
+
+vadbvald;mbl;dsbml'mqa
