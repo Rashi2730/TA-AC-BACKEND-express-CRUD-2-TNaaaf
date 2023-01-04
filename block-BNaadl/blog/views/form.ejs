@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Bubblegum Sans', cursive;
+        background-color: #95e1d3;
+      }
+      ul a {
+        text-decoration: none;
+      }
+      img {
+        height: 8rem;
+      }
+      section {
+        text-align: center;
+      }
+      .flex {
+        display: flex;
+        justify-content: space-between;
+      }
+      li {
+        border: none;
+        background-color: #eaffd0;
+        color: #f38181;
+        padding: 0.45rem 2rem;
+        border-radius: 20px;
+        list-style: none;
+        margin: 0 12px;
+      }
+      form {
+        text-align: center;
+        background: #eaffd0;
+        width: 400px;
+        margin-left: 28rem;
+        padding: 1rem;
+        border-radius: 10%;
+        margin-top: 0;
+      }
+      label {
+        margin-right: 4rem;
+        color: rgb(68, 17, 68);
+      }
+      .input {
+        margin: 0.55rem 0;
+      }
+      input {
+        margin: 0.25rem 0;
+        border: none;
+        border-radius: 10px;
+        padding: 0.45rem 1.5rem;
+        background-color: #bdefe6;
+      }
+      h2 {
+        color: rgb(68, 17, 68);
+      }
+      button {
+        border: none;
+        /* margin: 2rem; */
+        background-color: #f38181;
+        padding: 0.75rem 2rem;
+        border-radius: 45%;
+        font-size: 0.75rem;
+        color: #eaffd0;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="flex">
+      <img src="../images/106269152_padded_logo.png" alt="" />
+      <nav>
+        <ul class="flex">
+          <a href="/articles/"><li>Articles</li></a>
+          <a href=""><li>About</li></a>
+          <a href=""><li>Contact</li></a>
+        </ul>
+      </nav>
+    </header>
+    <form action="/articles" method="POST">
+      <h2>Enter the Article Details</h2>
+      <div class="input">
+        <label for="article-title">Title of the article</label>
+        <br />
+        <input
+          type="text"
+          name="title"
+          id="article-title"
+          placeholder="Enter title"
+        />
+      </div>
+      <div class="input">
+        <label for="article-description">Descr. of the article</label>
+        <br />
+        <input
+          type="text"
+          name="description"
+          id="article-description"
+          placeholder="Enter description"
+        />
+      </div>
+      <div class="input">
+        <label for="article-tags">Some article tags </label>
+        <br />
+        <input
+          type="text"
+          name="tags"
+          id="article-tags"
+          placeholder="Enter tags"
+        />
+      </div>
+      <div class="input">
+        <label for="article-author">Author of the article</label>
+        <br />
+        <input
+          type="text"
+          name="author"
+          id="article-author"
+          placeholder="Enter author's name"
+        />
+      </div>
+      <div class="input">
+        <label for="article-likes">Likes on the article</label>
+        <br />
+        <input
+          type="text"
+          name="likes"
+          id="article-likes"
+          placeholder="Enter bio"
+        />
+      </div>
+      <div class="btn">
+        <button>Add article</button>
+      </div>
+    </form>
+  </body>
+</html>

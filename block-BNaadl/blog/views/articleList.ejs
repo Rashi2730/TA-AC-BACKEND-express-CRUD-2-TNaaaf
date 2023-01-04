@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Bubblegum Sans', cursive;
+        background-color: #95e1d3;
+      }
+      ul a {
+        text-decoration: none;
+      }
+      img {
+        height: 8rem;
+      }
+      section {
+        text-align: center;
+      }
+      .flex {
+        display: flex;
+        justify-content: space-between;
+      }
+      li {
+        border: none;
+        background-color: #eaffd0;
+        color: #f38181;
+        padding: 0.45rem 2rem;
+        border-radius: 20px;
+        list-style: none;
+        margin: 0 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="flex">
+      <img src="../images/106269152_padded_logo.png" alt="" />
+      <nav>
+        <ul class="flex">
+          <a href="/articles/new"><li>Add article</li></a>
+          <a href=""><li>About</li></a>
+          <a href=""><li>Contact</li></a>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <h1>Articles</h1>
+      <% list.forEach(article => {%>
+      <div>
+        <a href="/articles/<%= article._id%>">
+          <h2><%= article.title%></h2>
+        </a>
+        <p><%= article.title%></p>
+        <p><%= article.description.substr(0,200)%></p>
+      </div>
+      <%})%>
+    </section>
+  </body>
+</html>
