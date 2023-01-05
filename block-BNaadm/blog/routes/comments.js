@@ -1,39 +1,37 @@
 var express = require('express');
-var router = express();
-var Article = require('../models/article');
-var Comment = require('../models/comment');
+const Article = require('../models/Article');
+var router = express.Router();
+var Comment = require('../models/Comment');
 
-router.get('/:id/edit', (req, res, next) => {
-  var id = req.params.id;
-  Comment.findById(id, (err, comments) => {
-    console.log(comments, 'edit');
+/* GET home page. */
+router.get('/:commentId/edit', function (req, res, next) {
+  var commentId = req.params.commentId;
+  Comment.findById(commentId, (err, comment) => {
     if (err) return next(err);
-    res.render('updateComment', { comments });
+    res.render('editComment', { comment });
   });
 });
 
-router.post('/:id/post', (req, res, next) => {
+router.post('/:id', (req, res) => {
   var id = req.params.id;
-  Comment.findByIdAndUpdate(id, req.body, (err, comments) => {
+  Comment.findByIdAndUpdate(id, req.body, (err, comment) => {
     if (err) return next(err);
-    res.redirect('/blogs/' + comments.articleId + '/detail');
+    res.redirect('/articles/' + comment.articleId);
   });
 });
 
-router.get('/:id/delete', (req, res, next) => {
-  var commentId = req.params.id;
-  Comment.findByIdAndRemove(commentId, (err, comments) => {
+router.get('/:id/delete', (req, res) => {
+  var id = req.params.id;
+  Comment.findByIdAndDelete(id, (err, comment) => {
     if (err) return next(err);
-    res.redirect('/blogs/' + comments.articleId + '/detail');
+    Article.findByIdAndUpdate(
+      comment.articleId,
+      { $pull: { comments: comment.id } },
+      (err, article) => {
+        if (err) return next(err);
+        res.redirect('/articles/' + comment.articleId);
+      }
+    );
   });
 });
-
-router.get('/:id/like', (req, res, next) => {
-  var id = req.params.id;
-});
-
-router.get('/:id/dislike', (req, res, next) => {
-  var id = req.params.id;
-});
-
 module.exports = router;

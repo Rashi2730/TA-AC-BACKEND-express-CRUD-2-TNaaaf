@@ -1,0 +1,49 @@
+<% include partials/header%>
+
+<section>
+  <h3><%= article.title%></h3>
+  <p><%= article.author%></p>
+  <% article.tags.forEach((t) => {%>
+  <span><%= t %></span>
+  <%})%>
+  <p><%= article.description%></p>
+  <h4>Likes : <%= article.likes ? article.likes : 0%></h4>
+<div class="flex2">
+  <div class="details">
+    <a href="/articles/<%= article.id%>/likes">
+      <button>Like</button>
+    </a>
+
+    <a href="/articles/<%= article.id%>/edit">
+      <button>Edit</button>
+    </a>
+    <a href="/articles/<%= article.id%>/delete">
+      <button>Delete</button>
+    </a>
+  </div>
+</section>
+<section class="flex2 commentbox">
+  <div>
+    <h6>Comments</h6>
+    <hr>
+    <% article.comments.forEach(c => {%>
+      <p><%= c.text%></p>
+      <p class="small"> - <%= c.author%></p>
+      <a href="/comments/<%= c.id%>/edit">
+        <button>Edit</button>
+       </a>
+       <a href="/comments/<%= c.id%>/delete">
+        <button>Delete</button>
+       </a>
+    
+   <% }) %>
+  </div>
+  <div class="comment">
+    <form class="flex3" action="/articles/<%= article.id%>/comments" method="POST">
+      <textarea name="text" rows="3" placeholder="Add Comment...."></textarea>
+      <input type="text" name="author" placeholder="Author name" />
+      <input type="submit" class="addCom" value="Add Comment" />
+    </form>
+  </div>
+</section>
+<% include partials/footer%>

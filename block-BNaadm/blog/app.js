@@ -5,13 +5,21 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/blog', (err) => {
-  console.log(err ? err : 'connected to database');
-});
+mongoose.set('strictQuery', false);
+mongoose.connect(
+  'mongodb://127.0.0.1/blog',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  (err) => {
+    console.log(err ? err : 'Connected to database');
+  }
+);
 
 var indexRouter = require('./routes/index');
-var blogRouter = require('./routes/blogs');
-var commentRouter = require('./routes/comments');
+var articlesRouter = require('./routes/articles');
+var commentsRouter = require('./routes/comments');
 
 var app = express();
 
@@ -26,8 +34,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/blogs', blogRouter);
-app.use('/comments', commentRouter);
+app.use('/articles', articlesRouter);
+app.use('/comments', commentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
