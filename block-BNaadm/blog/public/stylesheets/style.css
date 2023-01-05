@@ -1,0 +1,107 @@
+body {
+  /* padding: 50px; */
+  font-family: 'Bubblegum Sans', cursive;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*header*/
+header img {
+  width: 140px;
+  height: 60px;
+}
+li {
+  list-style: none;
+  background-color: black;
+  padding: 0.45rem 1.65rem;
+  border-radius: 20px;
+  margin: 0 0.45rem 1rem 0.45rem;
+}
+.add {
+  display: inline;
+}
+
+input {
+  margin: 0.95rem 0;
+}
+
+button {
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  border-radius: 20px;
+  font-family: 'Bubblegum Sans', cursive;
+
+  padding: 0.45rem 1.55rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: 'Bubblegum Sans', cursive;
+}
+
+h2 {
+  font-weight: 100;
+  padding: 0.65rem 0.65rem 0 0.65rem;
+  color: black;
+}
+.block p {
+  margin: 1rem;
+  color: black;
+}
+.block {
+  justify-content: space-between;
+  /* display: flex; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  text-align: left;
+  margin: 1rem 0 0 4rem;
+  width: 600px;
+}
+.articleList h1 {
+  text-align: left;
+  margin: 2rem 0 2rem 4rem;
+}
+.details {
+  margin: 0.85rem;
+}
+.flex2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment {
+  display: inline;
+  padding: 1rem;
+}
+.addCom {
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  border-radius: 20px;
+  font-family: 'Bubblegum Sans', cursive;
+
+  padding: 0.45rem 1.55rem;
+}
+.commentbox {
+  margin: 1rem 6rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.small {
+  font-size: 12px;
+}

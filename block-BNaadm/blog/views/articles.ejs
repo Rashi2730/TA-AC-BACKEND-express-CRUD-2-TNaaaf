@@ -1,0 +1,25 @@
+<% include partials/header%>
+
+<div class="articleList">
+  <%if(articles.length){%>
+  <h1>All Articles</h1>
+  <% articles.forEach((article) => { %>
+  <section >
+    <div class="block">
+      <a href="/articles/<%= article.id%>">
+        <h2><%= article.title%></h2>
+      </a>
+      <!-- <p>Tags - <%= article.tags%></p> -->
+
+      <p>Author - <%= article.author%></p>
+    </div>
+  </section>
+  <%})%> <% } else { %>
+  <h2>No Article Present</h2>
+  <ul>
+    <li class="add"><a href="/articles/new">Add Article</a></li>
+  </ul>
+  <%}%>
+</div>
+
+<% include partials/footer%>

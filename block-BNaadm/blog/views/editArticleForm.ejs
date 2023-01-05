@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: 'Bubblegum Sans', cursive;
+        text-align: center;
+      }
+      button {
+        border: none;
+        background-color: black;
+        color: white;
+        font-size: 15px;
+        border-radius: 20px;
+        font-family: 'Bubblegum Sans', cursive;
+
+        padding: 0.45rem 1.55rem;
+        margin: 0.65rem 0;
+      }
+
+      form {
+        margin: 6rem;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <header>
+      <div class="flex">
+        <a href="/">
+          <img src="/images/logo.png" alt="" />
+        </a>
+        <nav>
+          <ul class="flex">
+            <li>
+              <a href="/articles/">Articles</a>
+            </li>
+            <li>
+              <a href="/articles/new">Add Article</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header> -->
+    <div>
+      <form action="/articles/<%= article.id%>" method="POST">
+        <h2>Edit Article</h2>
+        <input
+          type="text"
+          name="title"
+          placeholder="Add title"
+          value="<%= article.title%>"
+        />
+        <br />
+        <textarea
+          name="description"
+          placeholder="Add description"
+          cols="30"
+          rows="4"
+        >
+<%= article.description%></textarea
+        >
+        <br />
+        <input
+          type="text"
+          name="tags"
+          placeholder="Tags"
+          value="<%= article.tags%>"
+        />
+        <br />
+        <input
+          type="text"
+          name="author"
+          placeholder="Author Name"
+          value="<%= article.author%>"
+        />
+        <div>
+          <button type="submit">Update Article</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
